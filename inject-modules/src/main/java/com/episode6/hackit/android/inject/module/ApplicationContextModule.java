@@ -51,15 +51,22 @@ import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
 import com.episode6.hackit.android.inject.qualifier.ForApplication;
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
+
+import javax.inject.Singleton;
 
 /**
  * Context module that provides @ForApplication qualified objects bound
  * by a @ForApplication qualified Context
  */
 @Module
-public class ApplicationContextModule {
+public abstract class ApplicationContextModule {
+
+  @Binds
+  @Singleton
+  abstract @ForApplication Context bindApplicationContext(Application application);
 
   @Provides
   @TargetApi(4)
@@ -457,4 +464,7 @@ public class ApplicationContextModule {
   static WifiManager provideWifiManager(@ForApplication Context context) {
     return (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
   }
+
+  @Binds
+  abstract WifiManager bindApplicationWifiManager(@ForApplication WifiManager wifiManager);
 }
