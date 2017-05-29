@@ -2,6 +2,8 @@ package com.episode6.hackit.android.inject.module;
 
 import android.app.WallpaperManager;
 import android.content.Context;
+import com.episode6.hackit.android.inject.qualifier.ForApplication;
+import com.episode6.hackit.android.inject.scope.ContextScope;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,5 +32,17 @@ public class ContextModuleTest {
   public void testContextModule() throws InvocationTargetException, IllegalAccessException {
     ContextModuleTester tester = new ContextModuleTester(ContextModule.class);
     tester.verifyMethods(mContext);
+  }
+
+  @Test
+  public void testScopedContextModule() throws InvocationTargetException, IllegalAccessException {
+    ContextModuleTester tester = new ContextModuleTester(ScopedContextModule.class);
+    tester.verifyMethods(mContext, ContextScope.class);
+  }
+
+  @Test
+  public void testApplicationContextModule() throws InvocationTargetException, IllegalAccessException {
+    ContextModuleTester tester = new ContextModuleTester(ApplicationContextModule.class);
+    tester.verifyMethods(mContext, ForApplication.class);
   }
 }

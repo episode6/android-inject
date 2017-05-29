@@ -49,8 +49,11 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
+import org.fest.assertions.core.Condition;
 import org.powermock.api.mockito.PowerMockito;
 
+import javax.inject.Qualifier;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -59,6 +62,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -180,8 +184,23 @@ public class ContextModuleTester {
   }
 
   public void verifyMethods(Context mockContext) throws InvocationTargetException, IllegalAccessException {
+    verifyMethods(mockContext, null);
+  }
+
+  public void verifyMethods(Context mockContext, Class<? extends Annotation> annotationToCheck) throws InvocationTargetException, IllegalAccessException {
+    boolean isQualifierAnnotation = annotationToCheck != null && annotationToCheck.isAnnotationPresent(Qualifier.class);
     List<Method> powermockRequiredMethods = new LinkedList<>();
     for (Method method : mStaticMethods) {
+
+      if (annotationToCheck != null && !method.isAnnotationPresent(annotationToCheck)) {
+        throw new AssertionError(
+            "Expected annotation " + annotationToCheck.toString() + " on method " + method.toGenericString());
+      }
+      if (isQualifierAnnotation && method.getParameterAnnotations()[0][0].annotationType() != annotationToCheck) {
+        throw new AssertionError(
+            "Expected annotation " + annotationToCheck.toString() + " on method param in method " + method.toGenericString());
+      }
+
       Class<?> returnType = method.getReturnType();
 
       if (VERIFIERS.containsKey(returnType)) {
