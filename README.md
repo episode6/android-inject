@@ -10,8 +10,8 @@ One annoying thing about bootstrapping a new app with dependency injection is st
 ```groovy
 repositories { jcenter() } // or mavenCentral
 dependencies {
-    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.1-SNAPSHOT'
-    compile 'com.episode6.hackit.android.inject:context-modules:0.0.1-SNAPSHOT'
+    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.2-SNAPSHOT'
+    compile 'com.episode6.hackit.android.inject:context-modules:0.0.2-SNAPSHOT'
 }
 ```
 
