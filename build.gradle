@@ -1,0 +1,29 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.3.2'
+    classpath 'com.episode6.hackit.deployable:deployable:0.1.5'
+    classpath 'com.episode6.hackit.gdmc:gdmc:0.1.4'
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = "3.3"
+  distributionType = "all"
+}
+
+allprojects {
+  repositories {
+    jcenter()
+  }
+
+  group = 'com.episode6.hackit.android.inject'
+  version = '0.0.1'
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
+
