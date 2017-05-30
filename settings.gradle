@@ -1,1 +1,1 @@
-include ':inject-annotations', ':inject-modules'
+include ':context-annotations', ':context-modules'

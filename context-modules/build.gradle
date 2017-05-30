@@ -24,9 +24,10 @@ android {
 }
 
 dependencies {
-  compile project(':inject-annotations')
+  compile project(':context-annotations')
   compile 'com.google.dagger:dagger'
   annotationProcessor 'com.google.dagger:dagger-compiler'
+
   testCompile 'junit:junit'
   testCompile 'org.mockito:mockito-core'
   testCompile 'org.powermock:powermock-api-mockito2'
