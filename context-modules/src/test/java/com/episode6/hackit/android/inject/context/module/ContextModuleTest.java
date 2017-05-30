@@ -1,9 +1,9 @@
-package com.episode6.hackit.android.inject.module;
+package com.episode6.hackit.android.inject.context.module;
 
 import android.app.WallpaperManager;
 import android.content.Context;
-import com.episode6.hackit.android.inject.qualifier.ForApplication;
-import com.episode6.hackit.android.inject.scope.ContextScope;
+import com.episode6.hackit.android.inject.context.qualifier.ForApplication;
+import com.episode6.hackit.android.inject.context.scope.ContextScope;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

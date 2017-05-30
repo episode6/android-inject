@@ -1,4 +1,4 @@
-package com.episode6.hackit.android.inject.module;
+package com.episode6.hackit.android.inject.context.module;
 
 import android.accounts.AccountManager;
 import android.annotation.TargetApi;
@@ -49,7 +49,7 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
-import com.episode6.hackit.android.inject.scope.ContextScope;
+import com.episode6.hackit.android.inject.context.scope.ContextScope;
 import dagger.Module;
 import dagger.Provides;
 

@@ -1,4 +1,4 @@
-package com.episode6.hackit.android.inject.scope;
+package com.episode6.hackit.android.inject.context.scope;
 
 import javax.inject.Scope;
 import java.lang.annotation.Documented;

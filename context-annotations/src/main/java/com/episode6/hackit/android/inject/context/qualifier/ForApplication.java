@@ -1,7 +1,6 @@
-package com.episode6.hackit.android.inject.qualifier;
+package com.episode6.hackit.android.inject.context.qualifier;
 
 import javax.inject.Qualifier;
-import javax.inject.Scope;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

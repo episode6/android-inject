@@ -1,4 +1,4 @@
-package com.episode6.hackit.android.inject.module;
+package com.episode6.hackit.android.inject.context.module;
 
 import android.accounts.AccountManager;
 import android.app.*;
@@ -49,7 +49,6 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
-import org.fest.assertions.core.Condition;
 import org.powermock.api.mockito.PowerMockito;
 
 import javax.inject.Qualifier;
@@ -62,7 +61,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 
 /**

@@ -1,7 +1,7 @@
-package com.episode6.hackit.android.inject;
+package com.episode6.hackit.android.inject.context;
 
-import com.episode6.hackit.android.inject.qualifier.ForApplication;
-import com.episode6.hackit.android.inject.scope.*;
+import com.episode6.hackit.android.inject.context.qualifier.ForApplication;
+import com.episode6.hackit.android.inject.context.scope.*;
 import org.fest.util.Lists;
 import org.junit.Test;
 
