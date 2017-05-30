@@ -58,8 +58,8 @@ import dagger.Provides;
 import javax.inject.Singleton;
 
 /**
- * Context module that provides @ForApplication qualified objects bound
- * by a @ForApplication qualified Context
+ * Context module for android Applications. Provides @ForApplication qualified objects given
+ * a bound {@link Application} instance
  */
 @Module
 public abstract class ApplicationContextModule {

@@ -6,7 +6,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Qualifier annotation for application-scoped instances of objects provided by Context.
+ * Qualifier annotation for application-scoped instances of objects.
  */
 @Qualifier
 @Documented

@@ -64,10 +64,11 @@ import java.util.Map;
 import static org.mockito.Mockito.verify;
 
 /**
- *
+ * Reflectively tests a context module's methods and annotations
  */
 public class ContextModuleTester {
 
+  // These maps are keyed to each method's return type
   private static final Map<Class<?>, Verifier> VERIFIERS;
   private static final Map<Class<?>, Verifier> POWERMOCK_VERIFIERS;
 

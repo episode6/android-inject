@@ -15,7 +15,8 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * Tests {@link ContextModule}
+ * Tests the context modules to ensure the correct proxy methods are called and that
+ * they are annotated correctly.
  */
 @PrepareForTest({WallpaperManager.class})
 @RunWith(PowerMockRunner.class)

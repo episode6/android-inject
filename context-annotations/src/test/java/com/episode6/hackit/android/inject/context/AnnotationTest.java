@@ -14,6 +14,10 @@ import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+/**
+ * Tests qualifier and scope annotations to ensure they have the correct annotations
+ * themselves.
+ */
 public class AnnotationTest {
 
   @SuppressWarnings("unchecked")

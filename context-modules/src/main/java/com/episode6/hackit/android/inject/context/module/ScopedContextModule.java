@@ -54,7 +54,7 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Context module that provides scoped objects.
+ * Identical to {@link ContextModule} but provides objects scoped to {@link ContextScope}.
  */
 @Module
 public class ScopedContextModule {

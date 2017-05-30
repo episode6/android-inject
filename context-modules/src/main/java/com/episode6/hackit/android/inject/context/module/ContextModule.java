@@ -53,7 +53,8 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Standard context module
+ * Standard context module. Provides objects that are usually directly fetched
+ * from {@link Context}. All provided objects are unscoped.
  */
 @Module
 public class ContextModule {
