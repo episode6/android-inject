@@ -16,9 +16,12 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 public class AnnotationTest {
 
+  @SuppressWarnings("unchecked")
   private static final List<Class<? extends Annotation>> QUALIFIERS = Lists.<Class<? extends Annotation>>newArrayList(
       ForApplication.class);
-  private static final List<Class<? extends Annotation>> SCOPES = Lists.<Class<? extends Annotation>>newArrayList(
+
+  @SuppressWarnings("unchecked")
+  private static final List<Class<? extends Annotation>> SCOPES = Lists.newArrayList(
       ActivityScope.class,
       BroadcastReceiverScope.class,
       ContentProviderScope.class,
