@@ -20,6 +20,7 @@ dependencies {
 ##### `com.episode6.hackit.android.inject:context-annotations`
  - Qualifier Annotations
    - `@ForApplication`
+   - `@ForContextScope`
  - Scope Annotations
    - `@ContextScope`
    - `@ActivityScope`

@@ -1,6 +1,7 @@
 package com.episode6.hackit.android.inject.context;
 
 import com.episode6.hackit.android.inject.context.qualifier.ForApplication;
+import com.episode6.hackit.android.inject.context.qualifier.ForContextScope;
 import com.episode6.hackit.android.inject.context.scope.*;
 import org.fest.util.Lists;
 import org.junit.Test;
@@ -21,8 +22,9 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class AnnotationTest {
 
   @SuppressWarnings("unchecked")
-  private static final List<Class<? extends Annotation>> QUALIFIERS = Lists.<Class<? extends Annotation>>newArrayList(
-      ForApplication.class);
+  private static final List<Class<? extends Annotation>> QUALIFIERS = Lists.newArrayList(
+      ForApplication.class,
+      ForContextScope.class);
 
   @SuppressWarnings("unchecked")
   private static final List<Class<? extends Annotation>> SCOPES = Lists.newArrayList(
