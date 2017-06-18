@@ -2,6 +2,7 @@ package com.episode6.hackit.android.inject.context;
 
 import com.episode6.hackit.android.inject.context.qualifier.ForApplication;
 import com.episode6.hackit.android.inject.context.qualifier.ForContextScope;
+import com.episode6.hackit.android.inject.context.qualifier.ForFragment;
 import com.episode6.hackit.android.inject.context.scope.*;
 import org.fest.util.Lists;
 import org.junit.Test;
@@ -24,7 +25,8 @@ public class AnnotationTest {
   @SuppressWarnings("unchecked")
   private static final List<Class<? extends Annotation>> QUALIFIERS = Lists.newArrayList(
       ForApplication.class,
-      ForContextScope.class);
+      ForContextScope.class,
+      ForFragment.class);
 
   @SuppressWarnings("unchecked")
   private static final List<Class<? extends Annotation>> SCOPES = Lists.newArrayList(
@@ -32,6 +34,7 @@ public class AnnotationTest {
       BroadcastReceiverScope.class,
       ContentProviderScope.class,
       ContextScope.class,
+      FragmentScope.class,
       ServiceScope.class);
 
   @Test
