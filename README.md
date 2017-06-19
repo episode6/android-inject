@@ -12,6 +12,7 @@ repositories { maven { url "https://oss.sonatype.org/content/repositories/snapsh
 dependencies {
     compile 'com.episode6.hackit.android.inject:context-annotations:0.0.2-SNAPSHOT'
     compile 'com.episode6.hackit.android.inject:context-modules:0.0.2-SNAPSHOT'
+    compile 'com.episode6.hackit.android.inject:more-annotations:0.0.2-SNAPSHOT'
 }
 ```
 
@@ -41,6 +42,10 @@ The modules in this package provide objects that generally come from a `android.
    - Requires `android.content.Context` be bound in the graph.
    - Requires you component/subcomponent be scoped with `@ContextScope` (note: you can include multiple scopes on a single component and they essentially become aliases)
 
+##### `com.episode6.hackit.android.inject:more-annotations`
+ - Qualifier Annotations
+   - `@ForUiThread`
+   - `@ForWorkerThread`
 
 ## License
 MIT: https://github.com/episode6/android-inject/blob/master/LICENSE
