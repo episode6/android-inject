@@ -8,10 +8,11 @@ One annoying thing about bootstrapping a new app with dependency injection is st
 
 ### Installation
 ```groovy
-repositories { jcenter() } // or mavenCentral
+repositories { jcenter() }
 dependencies {
-    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.1'
-    compile 'com.episode6.hackit.android.inject:context-modules:0.0.1'
+    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.2'
+    compile 'com.episode6.hackit.android.inject:context-modules:0.0.2'
+    compile 'com.episode6.hackit.android.inject:more-annotations:0.0.2'
 }
 ```
 
@@ -20,6 +21,7 @@ dependencies {
 ##### `com.episode6.hackit.android.inject:context-annotations`
  - Qualifier Annotations
    - `@ForApplication`
+   - `@ForContextScope`
  - Scope Annotations
    - `@ContextScope`
    - `@ActivityScope`
@@ -40,6 +42,10 @@ The modules in this package provide objects that generally come from a `android.
    - Requires `android.content.Context` be bound in the graph.
    - Requires you component/subcomponent be scoped with `@ContextScope` (note: you can include multiple scopes on a single component and they essentially become aliases)
 
+##### `com.episode6.hackit.android.inject:more-annotations`
+ - Qualifier Annotations
+   - `@ForUiThread`
+   - `@ForWorkerThread`
 
 ## License
 MIT: https://github.com/episode6/android-inject/blob/master/LICENSE

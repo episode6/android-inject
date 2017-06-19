@@ -1,9 +1,7 @@
-package com.episode6.hackit.android.inject.context;
+package com.episode6.hackit.android.inject;
 
-import com.episode6.hackit.android.inject.context.qualifier.ForApplication;
-import com.episode6.hackit.android.inject.context.qualifier.ForContextScope;
-import com.episode6.hackit.android.inject.context.qualifier.ForFragment;
-import com.episode6.hackit.android.inject.context.scope.*;
+import com.episode6.hackit.android.inject.thread.ForUiThread;
+import com.episode6.hackit.android.inject.thread.ForWorkerThread;
 import org.fest.util.Lists;
 import org.junit.Test;
 
@@ -12,6 +10,7 @@ import javax.inject.Scope;
 import java.lang.annotation.Annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Collections;
 import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
@@ -24,18 +23,11 @@ public class AnnotationTest {
 
   @SuppressWarnings("unchecked")
   private static final List<Class<? extends Annotation>> QUALIFIERS = Lists.newArrayList(
-      ForApplication.class,
-      ForContextScope.class,
-      ForFragment.class);
+      ForUiThread.class,
+      ForWorkerThread.class);
 
   @SuppressWarnings("unchecked")
-  private static final List<Class<? extends Annotation>> SCOPES = Lists.newArrayList(
-      ActivityScope.class,
-      BroadcastReceiverScope.class,
-      ContentProviderScope.class,
-      ContextScope.class,
-      FragmentScope.class,
-      ServiceScope.class);
+  private static final List<Class<? extends Annotation>> SCOPES = Collections.emptyList();
 
   @Test
   public void testAllRetention() {
