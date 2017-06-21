@@ -10,9 +10,9 @@ One annoying thing about bootstrapping a new app with dependency injection is st
 ```groovy
 repositories { jcenter() }
 dependencies {
-    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.2'
-    compile 'com.episode6.hackit.android.inject:context-modules:0.0.2'
-    compile 'com.episode6.hackit.android.inject:more-annotations:0.0.2'
+    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.3'
+    compile 'com.episode6.hackit.android.inject:context-modules:0.0.3'
+    compile 'com.episode6.hackit.android.inject:more-annotations:0.0.3'
 }
 ```
 
@@ -44,8 +44,12 @@ The modules in this package provide objects that generally come from a `android.
 
 ##### `com.episode6.hackit.android.inject:more-annotations`
  - Qualifier Annotations
+   - `@ForDialog`
    - `@ForUiThread`
    - `@ForWorkerThread`
+ - Scope Annotations
+   - `@DialogScope`
+
 
 ## License
 MIT: https://github.com/episode6/android-inject/blob/master/LICENSE
