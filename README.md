@@ -10,9 +10,9 @@ One annoying thing about bootstrapping a new app with dependency injection is st
 ```groovy
 repositories { maven { url "https://oss.sonatype.org/content/repositories/snapshots/" } }
 dependencies {
-    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.3-SNAPSHOT'
-    compile 'com.episode6.hackit.android.inject:context-modules:0.0.3-SNAPSHOT'
-    compile 'com.episode6.hackit.android.inject:more-annotations:0.0.3-SNAPSHOT'
+    compile 'com.episode6.hackit.android.inject:context-annotations:0.0.4-SNAPSHOT'
+    compile 'com.episode6.hackit.android.inject:context-modules:0.0.4-SNAPSHOT'
+    compile 'com.episode6.hackit.android.inject:more-annotations:0.0.4-SNAPSHOT'
 }
 ```
 
