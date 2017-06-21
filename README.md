@@ -44,8 +44,12 @@ The modules in this package provide objects that generally come from a `android.
 
 ##### `com.episode6.hackit.android.inject:more-annotations`
  - Qualifier Annotations
+   - `@ForDialog`
    - `@ForUiThread`
    - `@ForWorkerThread`
+ - Scope Annotations
+   - `@DialogScope`
+
 
 ## License
 MIT: https://github.com/episode6/android-inject/blob/master/LICENSE

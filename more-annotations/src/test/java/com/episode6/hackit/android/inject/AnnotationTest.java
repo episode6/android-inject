@@ -1,5 +1,7 @@
 package com.episode6.hackit.android.inject;
 
+import com.episode6.hackit.android.inject.dialog.DialogScope;
+import com.episode6.hackit.android.inject.dialog.ForDialog;
 import com.episode6.hackit.android.inject.thread.ForUiThread;
 import com.episode6.hackit.android.inject.thread.ForWorkerThread;
 import org.fest.util.Lists;
@@ -23,11 +25,13 @@ public class AnnotationTest {
 
   @SuppressWarnings("unchecked")
   private static final List<Class<? extends Annotation>> QUALIFIERS = Lists.newArrayList(
+      ForDialog.class,
       ForUiThread.class,
       ForWorkerThread.class);
 
   @SuppressWarnings("unchecked")
-  private static final List<Class<? extends Annotation>> SCOPES = Collections.emptyList();
+  private static final List<Class<? extends Annotation>> SCOPES = Lists.<Class<? extends Annotation>>newArrayList(
+      DialogScope.class);
 
   @Test
   public void testAllRetention() {
