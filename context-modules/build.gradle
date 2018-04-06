@@ -8,7 +8,6 @@ targetCompatibility = 1.7
 
 android {
   compileSdkVersion gdmcVersion('android.compilesdk') as Integer
-  buildToolsVersion gdmcVersion('android.buildtools')
 
   buildTypes {
     release {
@@ -24,14 +23,14 @@ android {
 }
 
 dependencies {
-  compile project(':context-annotations')
-  compile 'com.google.dagger:dagger'
+  api project(':context-annotations')
+  implementation 'com.google.dagger:dagger'
   annotationProcessor 'com.google.dagger:dagger-compiler'
 
-  testCompile 'junit:junit'
-  testCompile 'org.mockito:mockito-core'
-  testCompile 'org.powermock:powermock-api-mockito2'
-  testCompile 'org.powermock:powermock-module-junit4'
-  testCompile 'org.easytesting:fest-assert-core'
+  testImplementation 'junit:junit'
+  testImplementation 'org.mockito:mockito-core'
+  testImplementation 'org.powermock:powermock-api-mockito2'
+  testImplementation 'org.powermock:powermock-module-junit4'
+  testImplementation 'org.easytesting:fest-assert-core'
 }
 

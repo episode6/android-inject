@@ -1,5 +1,5 @@
 
-apply plugin: 'java'
+apply plugin: 'java-library'
 apply plugin: 'com.episode6.hackit.deployable.jar'
 apply plugin: 'com.episode6.hackit.gdmc'
 
@@ -7,9 +7,9 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
 dependencies {
-  compile 'javax.inject:javax.inject'
+  api 'javax.inject:javax.inject'
 
-  testCompile 'junit:junit'
-  testCompile 'org.easytesting:fest-assert-core'
+  testImplementation 'junit:junit'
+  testImplementation 'org.easytesting:fest-assert-core'
 }
 
