@@ -1,7 +1,13 @@
 package com.episode6.hackit.android.inject.context.module;
 
 import android.accounts.AccountManager;
-import android.app.*;
+import android.app.AlarmManager;
+import android.app.DownloadManager;
+import android.app.KeyguardManager;
+import android.app.NotificationManager;
+import android.app.SearchManager;
+import android.app.UiModeManager;
+import android.app.WallpaperManager;
 import android.app.admin.DevicePolicyManager;
 import android.app.job.JobScheduler;
 import android.app.usage.NetworkStatsManager;
@@ -35,7 +41,12 @@ import android.net.nsd.NsdManager;
 import android.net.wifi.WifiManager;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.nfc.NfcManager;
-import android.os.*;
+import android.os.BatteryManager;
+import android.os.DropBoxManager;
+import android.os.HardwarePropertiesManager;
+import android.os.PowerManager;
+import android.os.UserManager;
+import android.os.Vibrator;
 import android.os.health.SystemHealthManager;
 import android.os.storage.StorageManager;
 import android.print.PrintManager;
@@ -49,9 +60,9 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
+
 import org.powermock.api.mockito.PowerMockito;
 
-import javax.inject.Qualifier;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -60,6 +71,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import javax.inject.Qualifier;
 
 import static org.mockito.Mockito.verify;
 
@@ -162,6 +175,7 @@ public class ContextModuleTester {
     POWERMOCK_VERIFIERS.put(WallpaperManager.class, new Verifier() {
       @Override
       public void doVerify(Context mockContext) {
+        PowerMockito.verifyStatic(WallpaperManager.class);
         WallpaperManager.getInstance(mockContext);
       }
     });
@@ -219,7 +233,6 @@ public class ContextModuleTester {
       method.invoke(null, mockContext);
     }
 
-    PowerMockito.verifyStatic();
     for (Class<?> returnType : returnTypes) {
       POWERMOCK_VERIFIERS.get(returnType).doVerify(mockContext);
     }
